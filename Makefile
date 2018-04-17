@@ -1,10 +1,11 @@
 SHELL=/bin/bash
-ELASTIC_REGISTRY ?= docker.elastic.co
+ELASTIC_REGISTRY='tfplenum'
 
 export PATH := ./bin:./venv/bin:$(PATH)
 
 # Determine the version to build. Override by setting ELASTIC_VERSION env var.
-ELASTIC_VERSION := $(shell ./bin/elastic-version)
+#ELASTIC_VERSION := $(shell ./bin/elastic-version)
+ELASTIC_VERSION='6.2.3'
 
 ifdef STAGING_BUILD_NUM
   VERSION_TAG := $(ELASTIC_VERSION)-$(STAGING_BUILD_NUM)
@@ -18,7 +19,7 @@ IMAGE_FLAVORS ?= oss basic platinum
 # Which image flavor will additionally receive the plain `:version` tag
 DEFAULT_IMAGE_FLAVOR ?= basic
 
-IMAGE_TAG ?= $(ELASTIC_REGISTRY)/elasticsearch/elasticsearch
+IMAGE_TAG ?= $(ELASTIC_REGISTRY)/elasticsearch
 
 # When invoking docker-compose, use an extra config fragment to map Elasticsearch's
 # listening port to the docker host.
