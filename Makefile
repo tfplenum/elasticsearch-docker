@@ -37,7 +37,7 @@ endif
 .PHONY: all dockerfile docker-compose test test-build lint clean pristine run run-single run-cluster build release-manager release-manager-snapshot push
 
 # Default target, build *and* run tests
-all: build test
+all: build #test
 
 # Test specified versions without building
 test: lint docker-compose
