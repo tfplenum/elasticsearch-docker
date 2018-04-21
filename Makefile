@@ -5,7 +5,7 @@ export PATH := ./bin:./venv/bin:$(PATH)
 
 # Determine the version to build. Override by setting ELASTIC_VERSION env var.
 #ELASTIC_VERSION := $(shell ./bin/elastic-version)
-ELASTIC_VERSION='6.2.3'
+ELASTIC_VERSION='6.2.4'
 
 ifdef STAGING_BUILD_NUM
   VERSION_TAG := $(ELASTIC_VERSION)-$(STAGING_BUILD_NUM)
